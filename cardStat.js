@@ -15,6 +15,15 @@ exports.findById = (id) => {
   }
 }
 
+exports.starCheck = (id, fav) => {
+  for (var i = 0; i < cardStatArray.length; i++) {
+    if (cardStatArray[i].id === id) {
+      cardStatArray[i].fav = fav;
+      console.log(`done set fav to ${cardStatArray[i].fav} id ${id}`);
+    }
+  }
+}
+
 exports.push = (card) => {
   console.log(`Pushing Done!\n${card.id}`)
   cardStatArray.push(card);

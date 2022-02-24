@@ -51,6 +51,12 @@ app.post('/addCardStat', (req, res) => {
   cardStatArray.push(json);
 })
 
-app.listen(port, function () {
+app.put('/setStar/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const fav = req.body;
+  cardStatArray.starCheck(id, fav.fav);
+})
+
+app.listen(port, () => {
   console.log('Starting node.js on port ' + port)
 })
