@@ -1,7 +1,10 @@
 let cardStatArray = []
 
 exports.findAll =  () => {
-  return cardStatArray
+  let priorityStatAray = [], StarArray = [], unStarArray = [];
+  for(var i = 0; i < cardStatArray.length; i++)
+    cardStatArray[i].fav === 1 ?   StarArray.push(cardStatArray[i]) : unStarArray.push(cardStatArray[i]);
+  return priorityStatAray.concat(StarArray.slice(0).reverse(), unStarArray.slice(0).reverse());
 }
 
 exports.reset = () => {
